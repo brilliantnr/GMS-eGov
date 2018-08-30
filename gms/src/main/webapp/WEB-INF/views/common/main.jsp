@@ -49,26 +49,7 @@
          folder instead of downloading all of them to reduce the load. -->
     <link href="${context}/resources/other_resources/dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
 
-
-
-
-</head>
-<body>
-	<div id="wrapper">
-		<div id="header">
-			<tiles:insertAttribute name="header" />
-		</div>
-		<!-- header end -->
-		<div id="content">
-			<tiles:insertAttribute name="content" />
-		</div>
-
-		<!-- content end -->
-		<div id="footer">
-			<tiles:insertAttribute name="footer" />
-		</div>
-	</div>
-	<script src="${context}/resources/js/vendor/jquery-2.2.4.min.js"></script>
+<script src="${context}/resources/js/vendor/jquery-2.2.4.min.js"></script>
 	<%-- <script src="${context}/resources/js/app.js"></script> --%>
 	<script src="${context}/resources/js/popper.min.js"></script>
 	<script src="${context}/resources/js/vendor/bootstrap.min.js"></script>
@@ -87,9 +68,28 @@
 	<script src="${context}/resources/js/owl.carousel.min.js"></script>
 	<script src="${context}/resources/js/mail-script.js"></script>
 	<script src="${context}/resources/js/main.js"></script>
+
+
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<tiles:insertAttribute name="header" />
+		</div>
+		<!-- header end -->
+		<div id="content">
+			<tiles:insertAttribute name="content" />
+		</div>
+
+		<!-- content end -->
+		<div id="footer">
+			<tiles:insertAttribute name="footer" />
+		</div>
+	</div>
+	
 	<script>
 	
-	app.init('${context}');
+	/* app.init('${context}'); */
 
 	</script>
 </body>

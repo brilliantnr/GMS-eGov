@@ -13,7 +13,7 @@
 $('#login_submit').click(function(){
 	$('#login_form')
 	.attr({
-		action:app.x()+"/member/login",
+		action:"${context}/member/login",
 		method:"POST"
 	})
 	.submit();

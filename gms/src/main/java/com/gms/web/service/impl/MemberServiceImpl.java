@@ -15,54 +15,54 @@ import com.gms.web.service.MemberService;
 @Service
 public class MemberServiceImpl implements MemberService{
 	static final Logger logger = LoggerFactory.getLogger(MemberServiceImpl.class);
-	@Autowired MemberMapper memberDAO;
+	@Autowired MemberMapper mapper;
 
 	@Override
 	public void add(MemberDTO p) {
 		logger.info("---add() :p: {}---", p);
-		memberDAO.insert(p);
+		mapper.insert(p);
 	}
 
 	@Override
 	public List<?> list(Map<?, ?> p) {
 		logger.info("---list() :p: {}---", p);
-		return memberDAO.selectList(p);
+		return mapper.selectList(p);
 	}
 
 	@Override
 	public List<?> search(Map<?, ?> p) {
 		logger.info("---search() :p: {}---", p);
-		return memberDAO.selectSome(p);
+		return mapper.selectSome(p);
 	}
 
 	@Override
 	public MemberDTO retrieve(MemberDTO p) {
 		logger.info("---retrieve() :p: {}---", p);
-		return memberDAO.selectOne(p);
+		return mapper.selectOne(p);
 	}
 
 	@Override
 	public int count(Map<?, ?> p) {
 		logger.info("---count() :p: {}---", p);
-		return memberDAO.count(p);
+		return mapper.count(p);
 	}
 
 	@Override
 	public void modify(MemberDTO p) {
 		logger.info("---modify() :p: {}---", p);
-		memberDAO.update(p);
+		mapper.update(p);
 	}
 
 	@Override
 	public void remove(MemberDTO p) {
 		logger.info("---remove() :p: {}---", p);
-		memberDAO.delete(p);
+		mapper.delete(p);
 	}
 
 	@Override
 	public boolean login(MemberDTO p) {
 		logger.info("---login() :p: {}---", p);
-		return memberDAO.login(p).equals("1");
+		return mapper.login(p).equals("1");
 	}
 	
 

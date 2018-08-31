@@ -7,13 +7,22 @@
 			<th>${user.name}님의 회원정보</th>
 		</tr>
 		<tr>
-			<td>이름</td>
-			<td>${user.name}</td>
+			<td>아이디</td>
+			<td>${user.userid}</td>
 			<td rowspan="3"><img src="${img}/${imgPath}" alt="이미지"></td>
 		</tr>
 		<tr>
+			<td>이름</td>
+			<td>${user.name}</td>
+			<td></td>
+		</tr>
+		<tr>
 			<td>비밀번호</td>
-			<td> <input type="text" name="password" placeholder="${user.password}" /><br /></td>
+			<td> 
+			기 존  비밀번호  		:<input type="text" name="password" placeholder="${user.password}" /><br />
+			<!-- 새로운 비밀번호 		:<input id="new_pw" type="text" name="password" /><br />
+			새로운 비밀번호 확인 :<input id="new_pw_check" type="text" name="password"/><br /> -->
+			</td>
 		</tr>
 		<tr>
 			<td>주민번호</td>
@@ -59,49 +68,19 @@
 </div>
 </div> <!-- content -->
 <form method="POST" enctype="multipart/form-data" action="${context}/member.do?action=fileupload&page=retrieve">
-파일 업로드: <input type="file" name="upfile"><br/>
-			<input type="submit" name="파일업로드"><br/>
-			<!-- 
+	파일 업로드: <input type="file" name="upfile"><br /> 
+	<input type="submit" name="파일업로드"><br />
+	<!-- 
 			<input type="hidden" name="action" value="fileupload">
 			<input type="hidden" name="page" value="retrieve"> 
 			-->
 </form>
-
-	<script>
-	var form = document.getElementById('update_form');
-	var team = document.getElementById('teamId');
-	var roll = document.getElementById('roll');
-	for(var i=0; i<team.options.length;i++){
-		//alert('---'+team.options[i].value+'와 같다!');		
-		if(team.options[i].value==='${user.teamId}'){   //loginCommand에서 user를 memberBean으로 지정
-			//alert('---'+team.options[i].value );
-			team.options[i].setAttribute("selected","selected");
-		}
-	}
-	
-	for(var i=0; i<roll.options.length;i++){
-		//alert('---'+roll.options.length);
-		if(roll.options[i].value==='${user.roll}'){
-			//alert('---'+roll.options[i].value);
-			roll.options[i].setAttribute("selected","selected");
-		}
-	}
-		
-	
-	
-		document.getElementById('update_submit').addEventListener('click',
-				function() {
-					var form = document.getElementById('update_form');
-					alert('----update 확인 버튼 클릭----');
-					if (form.update_pw.value === "") {
-						form.update_pw.value = ${user.password};
-					}
-				form.action="${context}/member.do";
-				form.method="post";
-				form.submit();
-				});
-		
-		
-	</script>
-</body>
-</html>
+<script>
+	$('#update_submit').click(function(){
+		alert('update_submit 클릭');
+		$('#update_form').attr({
+			action:"${context}/member/modify",
+			method:"POST"
+		}).submit();
+	});
+</script>

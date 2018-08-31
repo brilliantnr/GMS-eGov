@@ -29,7 +29,7 @@
 <link rel="stylesheet" href="${context}/resources/css/font-awesome.min.css">
 <link rel="stylesheet" href="${context}/resources/css/bootstrap.css">
 <link rel="stylesheet" href="${context}/resources/css/magnific-popup.css">
-<link rel="stylesheet" href="${context}/resources/css/jquery-ui.css">
+<%-- <link rel="stylesheet" href="${context}/resources/css/jquery-ui.css"> --%>
 <link rel="stylesheet" href="${context}/resources/css/nice-select.css">
 <link rel="stylesheet" href="${context}/resources/css/animate.min.css">
 <link rel="stylesheet" href="${context}/resources/css/owl.carousel.css">

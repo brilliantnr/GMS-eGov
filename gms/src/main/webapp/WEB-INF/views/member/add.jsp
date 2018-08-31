@@ -40,3 +40,18 @@
 		</form>
 	</div>
 </div> <!-- content -->
+
+<script>
+$('#join_submit').click(function(){
+	alert('join_submit click !');
+	$('#join_form')
+	.attr({
+		action:"${context}/member/add",
+		method:"POST"
+	})
+	.submit();
+});
+<!--
+
+//-->
+</script>

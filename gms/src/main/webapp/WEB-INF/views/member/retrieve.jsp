@@ -2,14 +2,13 @@
 <div id="contentBox">
 	<table id="mypage">
 		<tr>
-			<th>${user.name}의  회원정보</th>
+			<th>${user.name}의회원정보</th>
 		</tr>
 		<tr>
 			<td>이름</td>
 			<td>${user.name}</td>
 			<td id="mypageImg" rowspan="3">
-				<img src="${img}/${imgPath}" alt="이미지">
-			</td>
+			<%-- <img src="${img}/${imgPath}" alt="이미지"></td> --%>
 		</tr>
 		<tr>
 			<td>비밀번호</td>
@@ -42,10 +41,21 @@
 	</table>
 	<button id="mypage_update">수정하기</button>
 	<button id="mypage_delete">회원탈퇴</button>
-		<!-- <input id="mypage_update" value="수정하기" >
+<!-- <input id="mypage_update" value="수정하기" >
 		<a id="mypage_update"> 수정하기 </a>
 		<a id="mypage_delete"> 회원탈퇴하기 </a> -->
-</div><!-- content -->
-	
-</body>
-</html>
+</div>
+<!-- content -->
+
+<script>
+$('#mypage_update').click(function() {
+	alert('회원정보수정 이동하자');
+	location.href = '${context}/move/auth/member/modify';
+});
+$('#mypage_delete').click(function() {
+	alert('회원탈퇴 이동하자');
+	location.href = '${context}/move/auth/member/remove';
+});
+
+</script>
+

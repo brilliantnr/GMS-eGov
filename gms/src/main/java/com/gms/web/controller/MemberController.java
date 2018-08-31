@@ -83,8 +83,7 @@ public class MemberController {
 	public void count() {}
 	
 	@RequestMapping("/remove")
-	public String remove(@ModelAttribute("user") MemberDTO user,
-			SessionStatus sessionStatus) {
+	public String remove(@ModelAttribute("user") MemberDTO user, SessionStatus sessionStatus) {
 		logger.info("---remove() :: {}---", "ENTER");
 		memberService.remove(user);
 		sessionStatus.setComplete();
